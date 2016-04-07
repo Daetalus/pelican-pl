@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+
+<head>
+    {% block head %}
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+
+
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/default.css" rel="stylesheet">
+    <link href="/css/css3-ani.css" rel="stylesheet">
+
+
+    {% endblock head %}
+
+	{% block opengraph %}
+		<meta property="og:locale" content="{{ DEFAULT_LANG }}">
+		<meta property="og:site_name" content="{{ SITENAME }}">
+	{% endblock opengraph %}
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">
+              Toggle navigation
+            </span>
+            <span class="icon-bar">
+            </span>
+            <span class="icon-bar">
+            </span>
+            <span class="icon-bar">
+            </span>
+          </button>
+          <a class="navbar-brand" href="/index.html">
+            Daetalus' Blog
+          </a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="/archives.html">
+                博文列表
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/Daetalus?tab=repositories">
+                项 目
+              </a>
+            </li>
+            <li>
+              <a href="/about.html">
+                关 于
+              </a>
+            </li>
+            <li>
+              <a href="/cv_cn.html">
+                简 历
+              </a>
+            </li>
+            <li>
+              <a href="/cv_en.html">
+                Resume
+              </a>
+            </li>
+            <li>
+              <a href="/pelican/output/index.html">
+                Test blog
+            </a>
+            </li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container -->
+    </nav>
+
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <h1 class="page-header">
+              <small>
+                侧重于Python使用、实现等方面的相关内容。
+              </small>
+            </h1>
+            <div class="entry" id="main-left">
+                    {% block content %}{% endblock content %}
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                        <li>
+                            <a href="{{ TWITTER_URL }}">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ FACEBOOK_URL }}">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ GITHUB_URL }}">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Blog powered by <a href="http://getpelican.com">Pelican</a>,
+                which takes great advantage of <a href="http://python.org">Python</a>.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    {% include 'analytics.html' %}
+    {% include 'disqus_script.html' %}
+</body>
+
+</html>
