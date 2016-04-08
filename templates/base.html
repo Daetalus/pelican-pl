@@ -16,7 +16,7 @@
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/default.css" rel="stylesheet">
     <link href="/css/css3-ani.css" rel="stylesheet">
-
+    <link href="/css/pygments.css" rel="stylesheet">
 
     {% endblock head %}
 
@@ -27,6 +27,15 @@
 </head>
 
 <body>
+    <style type="text/css">
+        body { background:#e8e8e8; }
+        @media screen and (max-width: 750px){
+            body { background:#fff; }
+        }
+        @media screen and (max-width: 1020px){
+            body { background:#fff; }
+        }
+    </style>
 
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -92,14 +101,17 @@
     <!-- Main Content -->
     <div class="container">
         <div class="row">
-            <h1 class="page-header">
-              <small>
-                侧重于Python使用、实现等方面的相关内容。
-              </small>
-            </h1>
             <div class="entry" id="main-left">
-                    {% block content %}{% endblock content %}
+                {% block content %}{% endblock content %}
             </div>
+        <div class="col-md-4" id="main-right">
+          <div class="sidenav">
+            <h4>
+              分 类
+            </h4>
+              {% include "categories.html" %} 
+          </div>
+        </div>
         </div>
     </div>
 
@@ -143,8 +155,6 @@
         </div>
     </footer>
 
-    {% include 'analytics.html' %}
-    {% include 'disqus_script.html' %}
 </body>
 
 </html>
