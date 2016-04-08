@@ -1,0 +1,9 @@
+<div>
+
+    <ul>
+        {% for cat, articles in categories %}
+        {% set num = articles|count %}
+        <li><u><a href="/categories.html#cat-{{ cat }}" title="{{ cat }}">{{ cat }} ({{ num }})</a></u></li>
+        {% endfor %}
+    </ul>
+</div>
