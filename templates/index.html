@@ -2,9 +2,9 @@
 
 {% block content %}
     <h1 class="page-header">
-      <small>
+      <big>
         侧重于Python使用、实现等方面的相关内容。
-      </small>
+      </big>
     </h1>
     {% for article in articles_page.object_list %}
     <h2>
@@ -13,9 +13,8 @@
             {{ article.locale_date }}
         </div>
     </h2>
-    <hr>
-        <p> <div class="title-desc">{{ article.summary}}</div></p>
-        <p> <a href="{{ article.url }}"><span >阅读全文 &raquo; </span></a></p>
+        <div class="title-desc">{{ article.summary}}</div>
+        <a href="{{ article.url }}"><span >阅读全文 &raquo; </span></a>
     <hr>
     {% endfor %}
 
